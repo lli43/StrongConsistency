@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>    
+<configuration status="OFF">    
+  <appenders>    
+    <File name="FrontEnd" fileName="FrontEnd.log" append="false">    
+      
+      <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %class %M %L %-5level - %msg%xEx%n"/>  
+      <!-- Output format: Time Thread Class Method Line Level content -->  
+    </File>    
+    <File name="FrontEnd1" fileName="FrontEnd1.log" append="false">    
+      
+      <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %class %M %L %-5level - %msg%xEx%n"/>  
+      <!-- Output format: Time Thread Class Method Line Level content -->  
+    </File>
+    <File name="DataServer" fileName="DataServer.log" append="false">    
+      
+      <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %class %M %L %-5level - %msg%xEx%n"/>  
+      <!-- Output format: Time Thread Class Method Line Level content -->  
+    </File>
+    <Console name="PRINTOUT" target="SYSTEM_OUT">    
+      <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %class %M %L %-5level - %msg%xEx%n"/>  
+      <!-- Output format: Time Thread Class Method Line Level content -->  
+    </Console>
+  </appenders>    
+  <loggers>    
+    <Logger name="FrontEnd" level="debug" additivity = "false"> 
+      <AppenderRef ref="FrontEnd"/> 
+      <AppenderRef ref="PRINTOUT" level = "info"/> 
+    </Logger>
+    <Logger name="FrontEnd1" level="debug" additivity = "false"> 
+      <AppenderRef ref="FrontEnd1"/> 
+      <AppenderRef ref="PRINTOUT" level = "info"/> 
+    </Logger>
+    <Logger name="DataServer" level="debug" additivity = "false"> 
+      <AppenderRef ref="DataServer"/> 
+      <AppenderRef ref="PRINTOUT" level = "info"/> 
+    </Logger>
+    <root level="info">    
+      <appender-ref ref="PRINTOUT"/>    
+    </root>    
+  </loggers>    
+</configuration>  
